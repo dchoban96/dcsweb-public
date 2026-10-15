@@ -1,0 +1,52 @@
+# IndexNow: after every push to main, tells Bing (and the other IndexNow engines) which pages changed,
+# so they re-crawl them within minutes instead of days. The key file is <key>.txt at the site root.
+# Run it by hand (Actions → IndexNow → Run workflow) to submit every URL in the sitemap.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', 'sitemap.xml']
+  workflow_dispatch:
+
+env:
+  HOST: www.dcsweb.it
+  KEY: 6eae964d9ed78f4ffaa166e9236cf176
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Changed pages → URLs
+        id: urls
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            grep -o '<loc>[^<]*</loc>' sitemap.xml | sed 's#</\?loc>##g' > urls.txt
+          else
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- '*.html' \
+              | grep -v '^\.github/' \
+              | sed -e 's#index\.html$##' -e "s#^#https://${HOST}/#" > urls.txt || true
+          fi
+          echo "Pages to submit:"; cat urls.txt
+          echo "count=$(grep -c . urls.txt || true)" >> "$GITHUB_OUTPUT"
+
+      - name: Wait for GitHub Pages to publish
+        if: steps.urls.outputs.count != '0'
+        run: sleep 90
+
+      - name: Submit to IndexNow
+        if: steps.urls.outputs.count != '0'
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          host, key = os.environ['HOST'], os.environ['KEY']
+          urls = [u.strip() for u in open('urls.txt') if u.strip()]
+          body = json.dumps({'host': host, 'key': key, 'keyLocation': f'https://{host}/{key}.txt', 'urlList': urls}).encode()
+          req = urllib.request.Request('https://api.indexnow.org/indexnow', data=body, headers={'Content-Type': 'application/json; charset=utf-8'})
+          with urllib.request.urlopen(req) as r:
+              print('IndexNow:', r.status, '·', len(urls), 'URL')
+          PY
