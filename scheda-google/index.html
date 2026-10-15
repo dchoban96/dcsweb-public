@@ -218,14 +218,14 @@ a{color:inherit}
 .menu a{text-decoration:none;opacity:.85}
 .menu a:hover,.menu a[aria-current]{opacity:1}
 .menu a[aria-current]:not(.btn){color:var(--accent-text);font-weight:600}
-.topbar .btn[aria-current]:not(.su){background:var(--verde);color:#fff}
+.topbar .btn[aria-current]:not(.hg){background:var(--verde);color:#fff}
 .topbar .btn{background:var(--chrome-fg,var(--fg));color:var(--chrome-bg,var(--bg));padding:.6rem 1.05rem;font-size:.88rem;opacity:1}
-.topbar .btn.su{background:var(--verde);color:#fff;border-color:transparent;gap:.45rem;padding-left:.8rem}
-.topbar .btn.su .su-mark{width:1.25rem;height:1.25rem;flex:none}
-.topbar .btn.su:hover,.topbar .btn.su:active,.topbar .btn.su[aria-current],.topbar .btn.su.is-active{background:var(--inchiostro);color:#fff}
-.topbar[data-logo="green"] .btn.su{background:#f3f5f1;color:var(--verde)}
-.topbar[data-logo="green"] .btn.su:hover,.topbar[data-logo="green"] .btn.su:active,.topbar[data-logo="green"] .btn.su.is-active{background:var(--inchiostro);color:#fff}
-@media (max-width:760px){.menu a:not(.btn){display:none}.brand svg{height:36px}.menu{gap:.45rem}.topbar .btn{padding:.55rem .85rem;font-size:.84rem}.topbar .btn.su{padding-left:.65rem}}
+.topbar .btn.hg{background:var(--verde);color:#fff;border-color:transparent;gap:.45rem;padding-left:.8rem}
+.topbar .btn.hg .hg-mark{width:1.25rem;height:1.25rem;flex:none}
+.topbar .btn.hg:hover,.topbar .btn.hg:active,.topbar .btn.hg[aria-current],.topbar .btn.hg.is-active{background:var(--inchiostro);color:#fff}
+.topbar[data-logo="green"] .btn.hg{background:#f3f5f1;color:var(--verde)}
+.topbar[data-logo="green"] .btn.hg:hover,.topbar[data-logo="green"] .btn.hg:active,.topbar[data-logo="green"] .btn.hg.is-active{background:var(--inchiostro);color:#fff}
+@media (max-width:760px){.menu a:not(.btn){display:none}.brand svg{height:36px}.menu{gap:.45rem}.topbar .btn{padding:.55rem .85rem;font-size:.84rem}.topbar .btn.hg{padding-left:.65rem}}
 
 /* ---------- Curtain ---------- */
 .curtain{height:500vh;position:relative}
@@ -515,7 +515,7 @@ body.sub main{padding-top:var(--nav-h)}
       <a href="/prezzi/">Prezzi</a>
       <a href="/chi-sono/">Chi sono</a>
       <a href="/domande-frequenti/">Domande</a>
-      <a class="btn magnet su" href="/speakup/"><svg class="su-mark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"> <path d="M121.0 336.8A158.0 158.0 0 0 0 297.3 75.5" fill="none" stroke="currentColor" stroke-width="16.0" stroke-linecap="round"/> <path d="M270.5 54.6L312.1 56.6L282.5 94.4Z" fill="currentColor" stroke="currentColor" stroke-width="5.6" stroke-linejoin="round"/> <path d="M148.8 273.8Q128.9 273.8 120.4 265.3Q111.89999999999999 256.8 111.0 237.1Q110.89999999999999 233.2 110.89999999999999 229.0Q110.89999999999999 224.8 111.1 220.65Q111.3 216.5 111.69999999999999 212.5H136.0Q135.6 220.2 135.55 227.75Q135.5 235.3 136.0 241.8Q136.5 247.2 139.55 249.95Q142.6 252.7 148.8 252.7Q154.9 252.7 157.7 249.95Q160.5 247.2 161.0 241.8Q161.4 237.8 161.55 234.2Q161.7 230.6 161.55 226.89999999999998Q161.4 223.2 161.0 219.1Q160.7 214.1 158.55 210.3Q156.4 206.5 151.4 205.2L136.5 201.39999999999998Q126.8 198.89999999999998 121.19999999999999 194.14999999999998Q115.6 189.39999999999998 113.14999999999999 182.2Q110.69999999999999 175.0 110.39999999999999 165.2Q110.3 160.3 110.3 155.75Q110.3 151.2 110.39999999999999 146.7Q110.89999999999999 133.6 114.75 125.55Q118.6 117.5 126.85 113.85Q135.1 110.19999999999999 148.8 110.19999999999999Q168.1 110.19999999999999 176.75 118.64999999999999Q185.4 127.1 186.2 146.7Q186.4 151.3 186.3 158.0Q186.2 164.7 185.9 170.89999999999998H161.1Q161.4 163.7 161.5 156.45Q161.6 149.2 161.3 142.0Q161.1 136.7 157.85 134.0Q154.6 131.29999999999998 148.8 131.29999999999998Q142.6 131.29999999999998 139.7 134.0Q136.8 136.7 136.2 142.0Q135.7 147.8 135.7 153.6Q135.7 159.39999999999998 136.2 165.2Q136.7 170.39999999999998 138.85 174.0Q141.0 177.6 146.4 178.89999999999998L159.5 182.0Q169.8 184.5 175.7 189.45Q181.6 194.39999999999998 184.14999999999998 201.79999999999998Q186.7 209.2 187.0 219.1Q187.1 222.4 187.1 225.35000000000002Q187.1 228.3 187.05 231.15Q187.0 234.0 186.8 237.1Q186.0 256.8 177.45 265.3Q168.89999999999998 273.8 148.8 273.8Z" fill="currentColor"/> <path d="M250.20000000000002 273.8Q229.9 273.8 221.10000000000002 265.35Q212.3 256.9 212.0 237.2Q211.60000000000002 206.1 211.60000000000002 174.55Q211.60000000000002 143.0 212.0 112.0H237.9Q237.5 132.7 237.45 154.85Q237.4 177.0 237.5 199.1Q237.60000000000002 221.2 237.8 241.9Q237.8 247.2 241.0 249.95Q244.20000000000002 252.7 250.20000000000002 252.7Q256.3 252.7 259.35 249.95Q262.40000000000003 247.2 262.40000000000003 241.9Q262.6 221.2 262.75 199.1Q262.90000000000003 177.0 262.85 154.85Q262.8 132.7 262.40000000000003 112.0H288.20000000000005Q288.70000000000005 143.0 288.70000000000005 174.55Q288.70000000000005 206.1 288.20000000000005 237.2Q287.90000000000003 256.9 279.20000000000005 265.35Q270.5 273.8 250.20000000000002 273.8Z" fill="none" stroke="currentColor" stroke-width="8.00" stroke-linejoin="round"/> </svg><span>Speak Up</span></a>
+      <a class="btn magnet hg" href="/hagen/"><svg class="hg-mark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M16 0H84Q100 0 100 16V70Q100 86 84 86H38L16 100V86Q0 86 0 70V16Q0 0 16 0Z M24 16H38V70H24Z M62 16H76V70H62Z M42 56H50L58 30H50Z"/></svg><span>Hagen</span></a>
       <a class="btn magnet" href="/contatti/">Contatti</a>
     </nav>
   </div>
@@ -598,7 +598,7 @@ body.sub main{padding-top:var(--nav-h)}
       <a href="/chi-sono/">Chi sono</a>
       <a href="/domande-frequenti/">Domande frequenti</a>
       <a href="/contatti/">Contatti</a>
-      <a href="/speakup/">Speak Up</a>
+      <a href="/hagen/">Hagen</a>
       <a href="https://www.instagram.com/dcsweb_it/" target="_blank" rel="noopener me">Instagram</a>
       <a href="/privacy/">Privacy</a>
       <a href="#" data-consent-open>Cookie</a>
@@ -643,8 +643,8 @@ body.sub main{padding-top:var(--nav-h)}
   });
   applyCur(cur);
 
-  /* ---- Speak Up button: black on press ---- */
-  [].slice.call(document.querySelectorAll('.topbar .btn.su')).forEach(function(b){
+  /* ---- Hagen button: black on press ---- */
+  [].slice.call(document.querySelectorAll('.topbar .btn.hg')).forEach(function(b){
     ['pointerdown','touchstart','keydown'].forEach(function(ev){ b.addEventListener(ev,function(){ b.classList.add('is-active') },{passive:true}) });
   });
 
