@@ -549,10 +549,12 @@ body.sub main{padding-top:var(--nav-h)}
 .hg-page .anon li svg{width:1.4rem;height:1.4rem;flex:none;margin-top:.15rem;color:var(--accent-text)}
 .hg-page .anon li strong{display:block;font-weight:600}
 .hg-page .anon li span{color:var(--muted);font-size:.95rem}
-.hg-page .quote{background:var(--ink);color:var(--bone);border-radius:var(--r);padding:2rem 1.8rem;display:grid;gap:1rem;box-shadow:var(--shadow)}
+.hg-page .quote{position:relative;background:var(--ink);color:var(--bone);border-radius:var(--r);padding:2rem 1.8rem;display:grid;gap:1rem;box-shadow:var(--shadow)}
 .hg-page .quote .mark{width:3rem;height:3rem}
 .hg-page .quote p{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1;text-wrap:balance}
 .hg-page .quote small{color:#a3ada7;font-size:.9rem}
+.hg-page .quote .go{position:absolute;inset:0;z-index:1;border-radius:var(--r);cursor:pointer}
+.hg-page .quote .go:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 @media (max-width:760px){.hg-page .anon{grid-template-columns:1fr}}
 .hg-page .custom{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem}
 .hg-page .cell{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem 1.3rem;display:grid;gap:.5rem;align-content:start}
@@ -657,6 +659,7 @@ body.sub main{padding-top:var(--nav-h)}
         <svg class="mark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="#6fc08f" fill-rule="evenodd" d="M16 0H84Q100 0 100 16V70Q100 86 84 86H38L16 100V86Q0 86 0 70V16Q0 0 16 0Z M24 16H38V70H24Z M62 16H76V70H62Z M42 56H50L58 30H50Z"/></svg>
         <p>Di' al titolare quello che non diresti di persona.</p>
         <small>È la frase che il team legge sulla locandina. Il resto lo fa il QR.</small>
+        <a class="go" href="https://tellhagen.it" aria-label="Vai su tellhagen.it"></a>
       </div>
     </div>
   </div>
