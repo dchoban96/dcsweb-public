@@ -29,6 +29,7 @@ jobs:
           else
             git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- '*.html' \
               | grep -v '^\.github/' \
+              | grep -v '^gustando-piano/' \
               | sed -e 's#index\.html$##' -e "s#^#https://${HOST}/#" > urls.txt || true
           fi
           echo "Pages to submit:"; cat urls.txt

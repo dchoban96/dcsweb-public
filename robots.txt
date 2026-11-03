@@ -30,5 +30,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /gustando-piano/
 
 Sitemap: https://www.dcsweb.it/sitemap.xml
